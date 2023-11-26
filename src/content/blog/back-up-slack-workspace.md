@@ -3,6 +3,10 @@ title: 'How to Back Up Your Entire Slack Workspace'
 description: 'How to go about backing up your entire Slack workspace'
 pubDate: 'Nov 26 2023'
 heroImage: '/blog-hero/andres-canchon-pP7EgaYDRKg-unsplash.jpg'
+heroImageByName: 'Andrés Canchón'
+heroImageByLink: 'https://unsplash.com/@bethewerewolf?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'
+heroImageSiteName: 'Unsplash'
+heroImageSiteLink: '/blog-hero/andres-canchon-pP7EgaYDRKg-unsplash.jpg'
 ---
 
 Everybody loves Slack. It's a great way to communiate with remote colleagues, or even with support communities. But what happens when you want to back up an entire Slack workspace?
@@ -90,7 +94,7 @@ This scripts turns the full URL into a long filename that preserves the path, wh
 
 To run this script on the list of URLs created in the previous step:
 
-```
+```bash
 cd 000_media_files
 cat ./slack_file_urls.txt | bash ~/download-urls.sh
 cd ../
@@ -104,7 +108,7 @@ The last step is to simply copy this entire set of data to Google Cloud Storage.
 
 First, you need to create a bucket in Google cloud storage. Be sure to use the `Archive` storage class for the bucket, and to select the region configuration you need.
 
-To autenticate inside the VM, first authenticate by following instruction, then run the final command to upload the date:
+To autenticate inside the VM, first authenticate, then run the final command to upload the date:
 
 ```bash
 gcloud auth login
@@ -115,6 +119,3 @@ And that's all! Your Slack data is on Google for about the price of a bar of soa
 Don't forget to remove the VM from Google Cloud Compute, along with its data volume.
 
 Happy backup!
-
-Photo by <a href="https://unsplash.com/@bethewerewolf?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Andrés Canchón</a> on <a href="https://unsplash.com/photos/black-net-pP7EgaYDRKg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-  
