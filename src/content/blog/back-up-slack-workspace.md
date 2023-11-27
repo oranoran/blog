@@ -6,7 +6,7 @@ heroImage: '/blog-hero/andres-canchon-pP7EgaYDRKg-unsplash.jpg'
 heroImageByName: 'Andrés Canchón'
 heroImageByLink: 'https://unsplash.com/@bethewerewolf?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'
 heroImageSiteName: 'Unsplash'
-heroImageSiteLink: '/blog-hero/andres-canchon-pP7EgaYDRKg-unsplash.jpg'
+heroImageSiteLink: 'https://unsplash.com/photos/black-net-pP7EgaYDRKg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'
 ---
 
 Everybody loves Slack. It's a great way to communiate with remote colleagues, or even with support communities. But what happens when you want to back up an entire Slack workspace?
@@ -21,7 +21,7 @@ First thing - you need to ask Slack for your workspace data. If you want *ALL* t
 
 Next, I initiated the Slack export in their export page. This was fairly quick, and finished in just a few minutes, producing a 40MB ZIP file which I could download.
 
-But wait, is my entire Slack workspace just 40MB? Of course not! This doesn't cover media attachments - only actual texts. If you open the ZIP file, you can see that it has a tree structure with ZIP files at the leaves, representing chat messages. Each message may have a `files` attributes, with media files attached. Each such file has many attributes, one of which is `url_private_download`. This URL, which includes an access token, can be used to download the actual file.
+But wait, is my entire Slack workspace just 40MB? Of course not! This doesn't cover media attachments - only actual texts. If you open the ZIP file, you can see that it has a tree structure with JSON files at the leaves, representing chat messages. Each message may have a `files` attributes, with media files attached. Each such file has many attributes, one of which is `url_private_download`. This URL, which includes an access token, can be used to download the actual file.
 
 # Preparing to Archive in the Cloud
 
